@@ -1,0 +1,89 @@
+\documentclass[
+    BCOR=6mm,
+    DIV=13,
+    draft=false,
+    titlepage=true,
+    twoside=false,
+    toc=bib,
+    parskip=half-,
+    chapterprefix=true,
+    appendixprefix=true,
+    footnotes=multiple,
+    headsepline=true]{scrreprt}
+
+% KOMA-Script related commands
+\renewcommand*{\partformat}{\thepart\autodot}
+\addtokomafont{disposition}{\rmfamily}
+\setkomafont{paragraph}{\mdseries\itshape}
+\RedeclareSectionCommand[beforeskip=-1sp,afterskip=1sp]{section}
+\RedeclareSectionCommand[beforeskip=-1sp,afterskip=1sp]{subsection}
+\RedeclareSectionCommand[beforeskip=-1sp,afterskip=1sp]{subsubsection}
+\RedeclareSectionCommand[beforeskip=-1sp,afterskip=1sp]{paragraph}
+\usepackage[automark]{scrlayer-scrpage}
+\lohead*{}
+\cohead*{}
+\rohead[]{\headmark}
+\rofoot*{\pagemark}
+\cofoot*{}
+\lofoot*{}
+
+% External packages and commands
+\input{packages.tex}
+
+\begin{document}
+\pagenumbering{roman}
+
+% Title-page (as per TUD requirements)
+\begin{titlepage}
+\vspace{1cm} 
+\begin{center} 
+    %\Huge \textbf{Orienting and building the actomyosin cortex in \acs{ce}} \vspace{1cm}\\
+    \Huge \textbf{Elucidating the mechanism of \acs{ap} axis alignment in the \acs{ce} embryo} \vspace{1cm}\\
+    \Large \textbf{DISSERTATION \vspace{0.5cm}\\zur Erlangung des akademischen Grades \vspace{0.5cm}\\Doctor rerum naturalium \\(Dr. rer. nat.) \vspace{0.5cm}\\
+    vorgelegt \vspace{0.5cm}\\dem Bereich Mathematik und Naturwissenschaften \\ der Technischen Universität Dresden\vspace{0.3cm} \\ von \vspace{0.3cm}\\
+    B.Tech. Archit Bhatnagar \vspace{0.5cm}\\ geboren am XX.YY.ZZZZ in Place \vspace{0.5cm}\\ eingereicht am 16.06.2020\vspace{5mm}\\
+    Gutachter:\\ Prof. Dr. Number 1\\ Prof. Dr. Number 3} \vspace{0.8cm}\\
+    Die Dissertation wurde in der Zeit von November 2016 bis Juni 2020 im Institut f\"ur XXX in der Professur f\"ur YYY unter der Betreuung von Prof. Dr. Number 1 und Prof. Dr. Number 2 angefertigt 
+\end{center}
+\clearpage
+\thispagestyle{plain}
+\hspace{\fill}{\huge To my parents and sister...}
+\vspace*{\fill}
+\end{titlepage}
+
+\pagestyle{scrheadings}
+%\chapterpagestyle{plain.scrheadings}
+%\partpagestyle{plain.scrheadings}
+\automark[]{section}
+
+\tableofcontents
+\listoffigures
+
+\addchap{Abbreviations}
+\input{acronyms.tex} %Add acronym definitions
+
+\addchap{Abstract}
+\lipsum[10]
+
+\cleardoubleoddpage
+\pagenumbering{arabic}
+
+\chapter{Introduction}\label{ch:APAxisIntro}
+\input{Introduction/Introduction.tex}
+
+\chapter{Cortex as an active viscous fluid}\label{ch:ActiveMatter} % A thin film active nematic description of the cortex
+\lipsum[80]
+
+\chapter{Materials and Methods}\label{ch:Exp}
+\input{ExpMethods/methods.tex}
+
+\chapter{Results}\label{ch:Results}
+\input{Results/results.tex}
+
+\chapter{Summary}\label{ch:Summary}
+\lipsum[80]
+
+\printbibliography[title={Bibliography}]
+
+\end{document}
+

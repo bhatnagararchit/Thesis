@@ -1,0 +1,86 @@
+%Packages
+\usepackage[english]{babel}
+\usepackage{lipsum}
+
+% Hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = blue, %Colour for external hyperlinks
+  linkcolor    = blue, %Colour of internal links
+  citecolor   = blue %Colour of citations
+}
+
+%Images/Graphics packages
+\usepackage{graphicx} 
+\usepackage{verbatim} %Comments
+\usepackage{xcolor}
+\usepackage{xspace}
+
+% Package for subfigures -- allows setting figure layout in latex
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup{font=normalsize,labelfont={bf,sf},singlelinecheck=false}
+\captionsetup[sub]{font=footnotesize,labelfont={bf,sf}}
+
+% For formatting text justification
+\usepackage{ragged2e}
+
+% math packages
+\usepackage{amsfonts,amssymb,amsbsy,amsmath,amsthm}
+
+%Quotes
+\usepackage[autostyle]{csquotes}
+
+% Chemistry typesetting package
+\usepackage[version=4]{mhchem}
+
+%Math formatting packages
+\usepackage{physics}
+
+%Package for bibliography
+\usepackage[
+    natbib=true,
+    style=numeric-comp,
+    sorting=none]{biblatex}
+\addbibresource{biblio.bib}
+
+%Units definition - qty cannot be used
+\usepackage{siunitx}
+\sisetup{
+    separate-uncertainty, % Value +- Error
+    multi-part-units=single, % Single unit for both value and error, no brackets
+    space-before-unit, % Unit spacing
+    range-phrase=--, % Representing Ranges: L -- Ul
+    range-units=single % Single unit for Ranges
+}
+\DeclareSIUnit{\unitAngle}{deg}
+\DeclareSIUnit[per-mode=symbol]{\unitAngVel}{\unitAngle\per\second}
+\DeclareSIUnit{\unitLength}{\micro\meter}
+\DeclareSIUnit[per-mode=symbol]{\unitPostVel}{\unitLength\per\second}
+\DeclareSIUnit[per-mode=symbol]{\unitCrtxVel}{\unitLength\per\minute}
+\DeclareSIUnit{\hours}{hours}
+\DeclareSIUnit{\unitRNAiTime}{\hours}
+\DeclareSIUnit{\pixels}{pixel}
+\DeclareSIUnit{\frames}{frame}
+\DeclareSIUnit[per-mode=symbol]{\unitMyosinConc}{AU/pixel}
+
+\DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
+\DeclareSIUnit\Molar{\textsc{m}}
+
+% Acronyms
+\usepackage[nohyperlinks]{acronym}
+% Species names are not properly formatted, plus not sure if we want them in the abbreviations list anyway. Included here separately instead
+\newacro{ce}[\textit{C. elegans}]{\textit{Caenorhabditis elegans}}
+\newacro{ecoli}[\textit{E. coli}]{\textit{Escherichia coli}}
+
+% New commands
+\usepackage{etoolbox}
+\newcommand{\geneExp}[2][]{% Typesetting RNAi and mutant (nop-1, dpy-11)
+    \ifstrempty{#1}{% Single RNAi
+        \textit{#2}\xspace
+    }{
+        \texit{#1}; \textit{#2}\xspace
+    }
+}
+\newcommand{\flurophoreLabel}[2]{#1::#2} % For labels of fluorophores (ex: NMY-2::GFP)

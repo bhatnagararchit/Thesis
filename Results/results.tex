@@ -1,0 +1,59 @@
+In this chapter, we describe the results from the various experiments conducted to investigate the mechanism of \ac{ap} axis alignment, alongwith their comparisons to the numerical simulations of the mathematical model described in \autoref{ch:ActiveMatter}. This chapter follows \citep{} closely, with experiments performed by me, P. Gross and M. Kramer; and numerical simulations by M. Nestler. 
+
+\section{Characterising \ac{ap} axis alignment in unperturbed embryos} \label{sec:apAxisAlignCharacteriseWT}
+We first set out to characterise the \ac{ap} axis alignment process in unperturbed embryos. \enquote{Unpertured} here refers to no genetic perturbations, such as no \ac{rnai} or mutations, apart from the addition of fluorescent tags. To this end, we undertook time-lapse microscopy of embryos from the SWG070 strain, which is labelled with \flurophoreLabel{\ac{nmy2}}{\ac{gfp}} and \flurophoreLabel{phDomain}{mCherry}. In these embryos, the male pronucleus can be observed as a dark circle in the cytoplasm, in the \flurophoreLabel{\ac{nmy2}}{\ac{gfp}} fluorescent channel -- as cytoplasmic myosin is excluded from the proncleus. The posterior domain as the depletion of \ac{nmy2} on the cortex near the male pronucleus. We characterise the \ac{ap} axis alignment process by tracking the position of the male pronucleus as it undergoes posterioristation. We refer the reader to \autoref{ch:Exp} for details on the image analysis methods used to track the male pronucleus. 
+
+We quantify two aspects of the posteriorisation of the male pronucleus -- its \enquote{angular position} and \enquote{posteriorisation velocity} (see \autoref{sec:imageAnalysis}). Angular position refers to the angle made between the long axis and the line connecting the center of the male pronucleus to the center of the embryo. Posteriorisation velocity is the component of the velocity of the male pronucleus that is parallel to the cortex (at the given angular position). Negative posteriorisation velocities indicate movement in direction of decreasing angular positions and thus towards the posterior end, positive posteriorisation velocity in direction of increasing angular positions and thus away from the posterior end. We also denote the end of posteriorisation as T = \SI{0}{\second}, and synchronise all movies to this time-point. 
+
+Plotting the angular position as a function of time, we find that the angular positions generally decrease towards \SI{0}{\unitAngle} as time reaches closer to end of posteriorisation (T = \SI{0}{\second}). In embryos where the \ac{ap} axis is mis-aligned -- that is, with initial angular position greater than \SI{5}{\unitAngle} (\num{33} out of \num{57} embryos) -- the \ac{ap} axis re-aligns back towards the long axis. We thus confirm the observation made in \cite{goldstein1996specification} -- the \ac{ap} axis does align itself towards the long axis of the embryo, evidenced by the posteriorisation of the male pronucleus.
+
+Plotting the posteriorisation velocity as a function of angular position (see \autoref{sec:statAnalysis} for details on binning), we find that the male pronucleus is, on average, moving towards the posterior end -- with higher speed at higher angular positions. This can also be observed as increasing magnitude of slope of the angular position vs time plots for higher angular positions. We thus conclude that the rate of \ac{ap} axis alignment is faster at higher angular positions: the male pronucleus moves faster towards the posterior end the further away from the posterior end it is.
+
+We also measure the cortical flows in the unperturbed embryos -- see \autoref{sec:imageAnalysis} for methods. We observe an average cortical speed of \SI{4.12 +- 0.59}{\unitCrtxVel}. We also bin the observed cortical flows using angular positions of the male pronucleus -- see \autoref{sec:statAnalysis}. We find that the point where the cortical flows change sign correlates with the angular position, as expected from the mechanism of \ac{ap} axis establishment. These observed cortical flows are later used by the mathematical model described in \autoref{ch:ActiveMatter} for calibration, to generate theoretical values of posteriorisation velocity as a function of angular positions -- see \autoref{subsec:expVsTheoryPcFurrow}.
+
+\section{Cortical flows are required for \ac{ap} axis alignment}\label{sec:corticalFlowsRoleMlc4}
+As discussed in \autoref{sec:ApAxisEstablishment}, cortical flows play an important role in proper \ac{ap} axis establishment. Do cortical flows also play a role in \ac{ap} axis alignment? To answer this question, we sought to impair cortical flows, and observe if posteriorisation of the male pronucleus is affected. We perform a \ac{rnai} of \geneExp{mlc-4} on worms of SWG070 strain, for a feeding time of \SI{24}{\unitRNAiTime}, to reduce cortical flow velocity (see \autoref{sec:rnaiMethods} for details on \ac{rnai}). MLC-4 is a conserved regulatory light chain present in \ac{nmy2}, and is required for the \ac{nmy2} myosin motor to function \citep{shelton1999nonmuscle}. We find that cortical flows are indeed reduced in \geneExp{mlc-4} \ac{rnai} embryos -- we observe an average cortical flow speed of \SI{1.45 +- 0.30}{\unitCrtxVel} in \geneExp{mlc-4} \ac{rnai} embryos compared to \SI{4.12 +- 0.59}{\unitCrtxVel} in unperturbed control embryos.
+
+In \geneExp{mlc-4} \ac{rnai} embryos, the male pronucleus was manually tracked instead of being tracked using the image analysis pipeline described in \autoref{sec:imageAnalysis}. We find that the posteriorisation of the male pronucleus is suppressed in these \ac{rnai} embryos: from \num{18} out of \num{30} \ac{rnai} embryos in which the male pronucleus has an initial angular position greater than \SI{5}{\unitAngle}, \num{10} fail to posteriorize. We also observe almost no change in angular position of the male pronucleus in \ac{rnai} embryos over time, as well as very small posteriorisation velocities over different angular positions compared to those observed in unperturbed embryos. We thus conclude that cortical flows are essential for posteriorisation of the male pronucleus, and thus \ac{ap} axis alignment.
+
+\section{Role of Pseudocleavage furrow in \ac{ap} axis alignment}\label{sec:PcFurrowRole}
+\subsection{Removing Pseudocleavage furrow via \ac{rnai}}\label{subsec:Nop1AndNop1Mel11}
+Motivation: What role does pseudocleavage furrow play in \ac{ap} axis alignment?
+Question: Is \ac{ap} axis alignment reduced by removing pseudocleavage furrow?
+Experiment 1: Remove PC using \textit{nop-1} \ac{rnai}. Refer to RNAi methods
+Observations 1: Cortical flows are reduced - compare to WT here (and refer to mlc-4). Posteriorization velocities are decreased - compare to WT (refer to figure). Angular position decay slowly to zero. 
+Add. Observation 1: Reduced nematic order in nop-1 (from reymann et al).
+Requirement: Need to get cortical flows close to WT atleast
+Experiment 2: Remove PC using \textit{nop-1} \ac{rnai}, using \textit{mel-11} RNAi to boost cortical flows. Refer to RNAi methods
+Observations 2: Cortical flows are slightly reduced - compare to WT here (and refer to nop-1). Posteriorization velocities are decreased - compare to WT and nop-1 (refer to figure). Angular position decay less slowly to zero. Histograms
+Conclusion: Removing PC reduces \ac{ap} axis alignment rate.
+
+\subsection{Comparing mathematical model to experimental results}\label{subsec:expVsTheoryPcFurrow}
+\subsubsection{Full model accounts for \ac{ap} axis alignment in unperturbed controls}\label{subsubsec:fullModelForWT}
+Cortical flow calibration. Comparison for posteriorization velocity and angular position with theory results - in that order. Show parameters. Conclusion: match is quite good.
+\subsubsection{Model with only cytoplasmic flows is comparable to pseudocleavage-deficient embryos}\label{subsubsec:cytoModelForNop1Mel11}
+Note that pseudocleavage furrow is set to zero in model. Cortical flow calibration for nop-1/mel-11 embryos. Why do again calibration: because cortical flows are similar but not same. Show parameters. Comparison for posteriorization velocity and angular position with theory results - in that order. Conclusion: similar order, seems to capture behaviour.
+\subsubsection{Reduced effect of nematics in pseudocleavage-deficient embryos}\label{subsubsec:reducedPcModelForNop1Mel11}
+Note that pseudocleavage furrow is allowed to vary. Cortical flow calibration for nop-1/mel-11 embryos. Comparison for posteriorization velocity and angular position with theory results - in that order. Show parameters. Conclusion: better match, furrow parameter still low compared to unperturbed.
+
+\section{Role of embryo geometry in \ac{ap} axis alignment}\label{sec:GeometryRole}
+\subsection{Rounder embryos show slower \ac{ap} axis alignment}\label{sec:roundEmbryosIma3}
+Motivation: How does changing embryo geometry change \ac{ap} axis alignment?
+Question: What happens for rounder embryos - less prominent long axis.
+Prediction: Less prominent long axis implies less prominent alignment. Numerical simulations on rounder embryos with same volumes indicate this is true.
+Experiment: Rounder embryos using ima-3 RNAi. Refer to methods.
+Observations 1: ima-3 embryos are rounder (long axis, short axis, aspect ratio). Same myosin concentrations and cortical flows as WT. Volumes are reduced - 70\%.
+Observations 2: Posteriorization velocities are decreased - compare to WT and nop-1/mel-11 (refer to figure). Angular position does decay slightly slower to zero. Histograms
+Conclusion: Rounder embryos show slower \ac{ap} axis alignment
+\subsection{Effective model of a contractile ring on an ellipsoid}\label{sec:minimalModelGeometry}
+A simpler model can capture this geometry dependence. 
+Explain this effective model - contractile ring on an ellipsoid
+Calculate results for small angles
+Note that short axis is constant between unperturbed and ima-3. Use it to convert to aspect ratio relation.
+Experimental relation: Binning by aspect ratio
+Compare to experimental relation. Conclude a good fit, with some issues, that captures trend.
+
+\section{Additional experiments}\label{sec:additionalExp}
+\subsection{Role of microtubules in \ac{ap} axis alignment}\label{subsec:MicrotubuleRoleGoa1Gpa16}
+\subsection{Are pseudocleavage furrow and cytoplasmic flows sufficient for \ac{ap} axis alignment?}\label{subsec:sufficiencyTestAir1Nop1Mel11}
+\subsection{More changes in embryo shape using dpy-11 mutant}\label{sec:moreRounderEmbryosDpy11Ima3}
