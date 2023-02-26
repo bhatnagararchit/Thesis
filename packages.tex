@@ -76,11 +76,14 @@
 
 % New commands
 \usepackage{etoolbox}
-\newcommand{\geneExp}[2][]{% Typesetting RNAi and mutant (nop-1, dpy-11)
-    \ifstrempty{#1}{% Single RNAi
-        \textit{#2}\xspace
-    }{
-        \texit{#1}; \textit{#2}\xspace
-    }
-}
+\newcommand{\geneExp}[1]{\textit{#1}\xspace} % Typesetting RNAi and mutant (nop-1, dpy-11)
 \newcommand{\flurophoreLabel}[2]{#1::#2} % For labels of fluorophores (ex: NMY-2::GFP)
+
+% List of variables used throughout the thesis
+\newcommand{\hydrodynamicLength}{$\lambda_H$\xspace}
+\newcommand{\nematicLength}{$\lambda_N$\xspace}
+\newcommand{\activeRelaxLength}{$\lambda_A$\xspace}
+\newcommand{\dragCoefficient}{$d$\xspace}
+\newcommand{\longAxisLength}{$a$\xspace}
+\newcommand{\shortAxisLength}{$b$\xspace}
+\newcommand{\aspectRatio}{$\flatfrac{a}{b}$\xspace}
