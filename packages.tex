@@ -16,6 +16,10 @@
 \usepackage{verbatim} %Comments
 \usepackage{xcolor}
 \usepackage{xspace}
+\usepackage{float}
+
+% Packages for tables
+\usepackage{multirow}
 
 % Package for subfigures -- allows setting figure layout in latex
 \usepackage{caption}
@@ -75,7 +79,7 @@
 \newacro{ecoli}[\textit{E. coli}]{\textit{Escherichia coli}}
 
 % New commands
-\usepackage{etoolbox}
+\usepackage{ifthen}
 \newcommand{\geneExp}[1]{\textit{#1}\xspace} % Typesetting RNAi and mutant (nop-1, dpy-11)
 \newcommand{\flurophoreLabel}[2]{#1::#2} % For labels of fluorophores (ex: NMY-2::GFP)
 
@@ -87,3 +91,11 @@
 \newcommand{\longAxisLength}{$a$\xspace}
 \newcommand{\shortAxisLength}{$b$\xspace}
 \newcommand{\aspectRatio}{$\flatfrac{a}{b}$\xspace}
+
+% Commands for theory sections
+% Introduction
+\newcommand{\speciesSuper}[2]{#1^{(#2)}}
+\newcommand{\inlinePartial}[3][1]{\ifthenelse{#1=1}{\partial_{#2} #3}{\partial^{#1}_{#2} #3}}
+% Surface descriptions
+\newcommand{\divSurf}{\mathrm{div}\:}
+\newcommand{\gradSurf}{\mathrm{grad}\:}

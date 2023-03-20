@@ -19,7 +19,7 @@
 \RedeclareSectionCommand[beforeskip=-1sp,afterskip=1sp]{subsection}
 \RedeclareSectionCommand[beforeskip=-1sp,afterskip=1sp]{subsubsection}
 \RedeclareSectionCommand[beforeskip=-1sp,afterskip=1sp]{paragraph}
-\usepackage[automark]{scrlayer-scrpage}
+\usepackage[automark,autooneside=false]{scrlayer-scrpage}
 \lohead*{}
 \cohead*{}
 \rohead[]{\headmark}
@@ -54,16 +54,17 @@
 \pagestyle{scrheadings}
 %\chapterpagestyle{plain.scrheadings}
 %\partpagestyle{plain.scrheadings}
-\automark[]{section}
-
-\tableofcontents
-\listoffigures
+%\automark[]{chapter}
+%\automark*[]{section}
 
 \addchap{Abbreviations}
 \input{acronyms.tex} %Add acronym definitions
 
 \addchap{Abstract}
-\lipsum[10]
+\input{Abstract/abstract.tex}
+
+\tableofcontents
+\listoffigures
 
 \cleardoubleoddpage
 \pagenumbering{arabic}
@@ -71,17 +72,17 @@
 \chapter{Introduction}\label{ch:APAxisIntro}
 \input{Introduction/Introduction.tex}
 
-\chapter{Cortex as an active viscous fluid}\label{ch:ActiveMatter} % A thin film active nematic description of the cortex
-\lipsum[80]
+\chapter{A theoretical model for \acs{ap} axis alignment}\label{ch:ActiveMatter}
+\input{ActiveMatterModel/model}
 
 \chapter{Materials and Methods}\label{ch:Exp}
 \input{ExpMethods/methods.tex}
 
-\chapter{Results}\label{ch:Results}
+\chapter{Experimental investigation of \acs{ap} axis alignment}\label{ch:Results}
 \input{Results/results.tex}
 
-\chapter{Summary}\label{ch:Summary}
-\lipsum[80]
+\chapter{Conclusions and Outlook}\label{ch:Summary}
+\input{Summary/summary.tex}
 
 \printbibliography[title={Bibliography}]
 
