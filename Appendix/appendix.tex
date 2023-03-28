@@ -1,0 +1,46 @@
+\section*{Legend of attached movies:}
+\begin{description}
+\item[Movie 1:]\hfill\\
+\ac{ap} axis alignment observed in \ac{ce} embryos labelled with \flurophoreLabel{PAR-2}{GFP} (cyan) denoting \ac{apar} domain and \flurophoreLabel{PAR-6}{mCherry} (magneta) denoting \ac{ppar} domain. Anterior to the left, posterior to the right. Note the movement of the male pronucleus towards the posterior end with the posterior \ac{ppar} domain on the cortex. Scale bar: \SI{10}{\micro\meter}.
+\item[Movie 2:]\hfill\\
+Posteriorisation of the male pronucleus -- dark circle in the cytoplasm towards the posterior end -- observed in unperturbed \ac{ce} embryos labelled with \flurophoreLabel{NMY-2}{GFP} (gray). Anterior to the left, posterior to the right. Note the movement of the male pronucleus towards the posterior end with the myosin depletion domain on the cortex. Note also the constriction in the middle of the embryo -- the pseudocleavage furrow. Scale bar: \SI{10}{\micro\meter}.
+\item[Movie 3:]\hfill\\
+No posteriorisation of the male pronucleus -- dark circle in the cytoplasm towards the posterior end -- observed in \geneExp{mlc-4} \ac{rnai} \ac{ce} embryos labelled with \flurophoreLabel{NMY-2}{GFP} (gray). Anterior to the left, posterior to the right. Male pronucleus does not move towards the posterior end. Scale bar: \SI{10}{\micro\meter}.
+\item[Movie 4:]\hfill\\
+No \ac{ap} axis alignment observed in \geneExp{mlc-4} \ac{rnai} \ac{ce} embryos labelled with \flurophoreLabel{PAR-2}{GFP} (cyan) denoting \ac{apar} domain and \flurophoreLabel{PAR-6}{mCherry} (magneta) denoting \ac{ppar} domain. Anterior to the left, posterior to the right. \ac{ppar} domain does not move towards the posterior end. Scale bar: \SI{10}{\micro\meter}.
+\item[Movie 5:]\hfill\\
+Slower posteriorisation of the male pronucleus -- dark circle in the cytoplasm towards the posterior end -- observed in \geneExp{nop-1; mel-11} \ac{rnai} \ac{ce} embryos labelled with \flurophoreLabel{NMY-2}{GFP} (gray). Anterior to the left, posterior to the right. Male pronucleus does move towards the posterior end, but slower compared to that observed for the unperturbed embryos. Scale bar: \SI{10}{\micro\meter}.
+\item[Movie 6:]\hfill\\
+Slower posteriorisation of the male pronucleus -- dark circle in the cytoplasm towards the posterior end -- observed in round \geneExp{ima-3} \ac{rnai} \ac{ce} embryos labelled with \flurophoreLabel{NMY-2}{GFP} (gray). Anterior to the left, posterior to the right. Male pronucleus does move towards the posterior end, but slower compared to that observed for the unperturbed embryos. Scale bar: \SI{10}{\micro\meter}.
+\item[Movie 7:]\hfill\\
+Double myosin depletion domain and double pseudocleavage furrow observed in \geneExp{air-1} \ac{rnai} \ac{ce} embryos labelled with \flurophoreLabel{NMY-2}{GFP} (gray). Anterior to the left, posterior to the right. Embryo polarises along the long axis, without needing the posteriorisation of the male pronucleus. Scale bar: \SI{10}{\micro\meter}.
+\item[Movie 8:]\hfill\\
+No movement of the myosin depletion domain observed in \geneExp{air-1; mel-11} \ac{rnai} in \geneExp{nop-1} mutant \ac{ce} embryos labelled with \flurophoreLabel{NMY-2}{GFP} (gray). Anterior to the left, posterior to the right. The myosin depletion domain -- indicating the posterior domain -- forms away from the posterior end (towards the top right of the embryo), and does not recenter towards the posterior. Scale bar: \SI{10}{\micro\meter}.
+\item[Movie 9:]\hfill\\
+Posteriorisation of the male pronucleus -- dark circle in the cytoplasm towards the posterior end -- observed in unperturbed \ac{ce} embryos labelled with \flurophoreLabel{TUB}{GFP} (cyan) and \flurophoreLabel{NMY-2}{mKate} (magneta). Anterior to the left, posterior to the right. Note the centrosomes -- labelled with \flurophoreLabel{TUB}{GFP} -- associated with the male pronucleus. Scale bar: \SI{10}{\micro\meter}.
+\item[Movie 10:]\hfill\\
+Posteriorisation of the male pronucleus -- dark circle in the cytoplasm towards the posterior end -- observed in \geneExp{goa-1; gpa-16} \ac{ce} embryos labelled with \flurophoreLabel{TUB}{GFP} (cyan) and \flurophoreLabel{NMY-2}{mKate} (magneta). Anterior to the left, posterior to the right. Note the centrosomes -- labelled with \flurophoreLabel{TUB}{GFP} -- associated with the male pronucleus. Separation between centrosomes is smaller than that observed in unperturbed embryos. Scale bar: \SI{10}{\micro\meter}.
+\end{description}
+
+\section*{Legend of attached datasets:}
+For each experimental condition described in this thesis in \autoref{ch:Results}, following datasets for each movie is recorded:
+\begin{description}
+\item[Male pronucleus tracking (nuclTrack.csv):]\hfill\\
+Dataset that records the male pronucleus trajectory observed in the movie. This csv file has the following columns: time (\si{\second}), x-coordinate of pronucleus center (\si{\micro\meter}), y-coordinate of pronucleus center (\si{\micro\meter}), angular position (\si{\unitAngle}), x-coordinate of closest point on cortex (\si{\micro\meter}), y-coordinate of closest point on cortex (\si{\micro\meter}), x-component of velocity of the male pronucleus (\si{\unitPostVel}), y-component of velocity of the male pronucleus (\si{\unitPostVel}), posteriorisation velocity (\si{\unitPostVel}). See \autoref{ch:Exp} for details.
+\item[Boundary fit to ellipse (axes.csv):]\hfill\\
+Dataset that records the elliptical fits to the embryo boundary in the movie. This csv file has the following columns: time (\si{\second}), length of semi-major axis of instantenous fitted ellipse (\si{\micro\meter}), length of semi-minor axis of instantenous fitted ellipse (\si{\micro\meter}). See \autoref{ch:Exp} for details.
+\item[Arclength along the cortex (arclength.csv):]\hfill\\
+Dataset that records the arclength coordinates (used for cortical flows) along the embryo boundary for the movie. This csv file has a single row, recording the distance of the points on the cortex from the posterior pole along the cortex.
+\item[Cortical flows (flows.csv):]\hfill\\
+Dataset that records the cortical flows at the arclength coordinates along the embryo boundary for the movie. This csv file has variable number of columns equal to numbr of columns in the arclength.csv file + 1. First column is time (\si{\second}). All the rest of the columns record cortical flow velocity (\si{\unitPostVel}) at the corresponding arclength coordinates.
+\end{description}
+
+\section*{Errata}
+The following errors in the print version were corrected in this digital version:
+\begin{description}
+    \item[Page 49] $\omega_{nucl}$ was erroneously given as $\omega_{nucl} = 1000$ instead of the correct value $\omega_{nucl} = 100$.
+    \item[Page 76] Average cortical flow speeds observed in embryos of the SWG057 strain were not entered in  \autoref{tab:resultsCorticalFlowSpeeds}.
+    \item[Page 132] Comparison of average cortical flow speeds between unperturbed and \geneExp{goa-1; gpa-16} \ac{rnai} embryos of the SWG057 strain depicted in \autoref{subfig:swg057Goa1Gpa16CrtxFlow-avgSpeed} incorrectly used the comparison of average cortical flow speeds in \autoref{subfig:swg070Air1CrtxFlow-avgSpeed}.
+    \item[Page 141] Legend of attached datasets used duplicate headings of \enquote{Arclength along the cortex (arclength.csv)}.
+\end{description}
+    

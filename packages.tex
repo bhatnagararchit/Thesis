@@ -6,9 +6,9 @@
 \usepackage{hyperref}
 \hypersetup{
   colorlinks   = true, %Colours links instead of ugly boxes
-  urlcolor     = blue, %Colour for external hyperlinks
-  linkcolor    = blue, %Colour of internal links
-  citecolor   = blue %Colour of citations
+  urlcolor     = black, %Colour for external hyperlinks
+  linkcolor    = black, %Colour of internal links
+  citecolor   = black %Colour of citations
 }
 
 %Images/Graphics packages
@@ -17,9 +17,15 @@
 \usepackage{xcolor}
 \usepackage{xspace}
 \usepackage{float}
+\usepackage{placeins}
 
 % Packages for tables
 \usepackage{multirow}
+\usepackage{array}
+% New definitions of column types: see https://tex.stackexchange.com/questions/12703/how-to-create-fixed-width-table-columns-with-text-raggedright-centered-raggedlef
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 % Package for subfigures -- allows setting figure layout in latex
 \usepackage{caption}
@@ -32,6 +38,7 @@
 
 % math packages
 \usepackage{amsfonts,amssymb,amsbsy,amsmath,amsthm}
+\usepackage{mathtools}
 
 %Quotes
 \usepackage[autostyle]{csquotes}
