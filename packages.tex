@@ -2,6 +2,17 @@
 \usepackage[english]{babel}
 \usepackage{lipsum}
 
+% Conversion to PDF/1A
+\usepackage[a-2b]{pdfx}
+% Metadata -- does not get included in the pdf right now
+\begin{filecontents}{main.xmpdata}
+\Title{Elucidating the mechanism of AP axis alignment in the C. elegans embryo}
+\Author{Bhatnagar, Archit}
+\Copyright{Copyright \copyright\ 2023 "Bhatnagar, Archit"}
+\Keywords{Anteroposterior axis\sep C. elegans\sep Pseudocleavage furrow\sep Actomyosin cortex\sep Active Matter}
+\Subject{PhD Thesis submitted to TU Dresden Physics Faculty on the experimental work done to elucidate the biophysical mechanism behind the alignment of the Anteroposterior axis with the long axis in the ellipsoidal C. elegans embryo at the one-cell stage}
+\end{filecontents}
+
 % Hyperlinks
 \usepackage{hyperref}
 \hypersetup{
